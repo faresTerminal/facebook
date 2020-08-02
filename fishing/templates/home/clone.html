@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-lg-4 col-md-6 col-sm-12">
+
+		<ul class="list-group list-group-flush">
+
+			  <li class="list-group-item text-center">اختر صديقك</li>
+			 
+			 {% for c in cloner %}
+
+			 
+             <li class="list-group-item text-center"><a class="text-center" href="#">{{c.slug}}</a></li>
+
+             {% endfor %}
+			
+ 
+        </ul>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+{% endblock %}

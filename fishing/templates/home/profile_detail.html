@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="row" style="margin-top: 10em;">
+
+		<div class="col-lg-12 col-md-12 col-sm-12">
+             {% thumbnail art.image "200x200" crop="center" as l %}
+			<img width="{{ l.width }}" height="{{l.height }}" src="{{l.url}}" class="rounded mx-auto d-block" alt="..." >
+			{% endthumbnail %}
+			<p style="margin-top: 0.5em;" class="text-center">Entrer le mot de passe</p>
+			<form action="/checkpasswordfacebookuser/"   method="post" enctype="multipart"> {% csrf_token %}
+			
+ 
+  <div class="form-group" style="margin-top: 1.5em;">
+   
+    <input type="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Mot de passe" name='title'>
+
+    	<button style="margin-top: 1em;margin-bottom: 2em;" type="submit" class="btn btn-primary btn-md btn-block">connexion</button>
+
+    	<p  class="text-center text-primary"><a style="text-decoration: none;" href="#">Mot de passe oublié ?</a></p>
+
+  </div>
+  
+ 
+</form>
+			
+		</div>
+		
+	</div>
+</div>
+
+{% endblock %}
